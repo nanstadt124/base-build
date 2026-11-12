@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   const normalizedEmail = email.trim().toLowerCase();
 
   const results = await stripe.charges.search({
-    query: `status:'succeeded' AND receipt_email:'${normalizedEmail}'`,
+    query: `status:'succeeded' AND billing_details.email:'${normalizedEmail}'`,
   });
 
   if (results.data.length === 0) {

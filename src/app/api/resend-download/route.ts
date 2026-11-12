@@ -13,11 +13,14 @@ export async function POST(request: Request) {
 
   const normalizedEmail = email.trim().toLowerCase();
 
-  const results = await stripe.charges.search({
-    query: `status:'succeeded' AND billing_details.email:'${normalizedEmail}'`,
-  });
+  const sessions = await stripe.checkout.sessions.list({ limit: 100 });
+  const match = sessions.data.find(
+    (session) =>
+      session.payment_status === "paid" &&
+      session.customer_details?.email?.toLowerCase() === normalizedEmail,
+  );
 
-  if (results.data.length === 0) {
+  if (!match) {
     // Don't reveal whether the email matched a purchase, to avoid
     // leaking who has/hasn't bought the product.
     return NextResponse.json({ ok: true });

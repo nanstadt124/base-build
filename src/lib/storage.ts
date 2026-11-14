@@ -11,7 +11,7 @@ const s3 = new S3Client({
   },
 });
 
-const DOWNLOAD_TTL_SECONDS = 60 * 60; // 1 hour
+const DOWNLOAD_TTL_SECONDS = 60 * 60 * 4; // 4 hours
 
 export async function getSignedDownloadUrl(key: string): Promise<string> {
   const command = new GetObjectCommand({

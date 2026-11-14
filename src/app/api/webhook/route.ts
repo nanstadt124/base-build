@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
-import { getSignedDownloadUrl } from "@/lib/storage";
 import { sendDownloadEmail } from "@/lib/email";
-import { product } from "@/lib/product";
 
 export async function POST(request: Request) {
   const body = await request.text();
@@ -30,8 +28,11 @@ export async function POST(request: Request) {
     const email = session.customer_details?.email;
 
     if (email) {
-      const downloadUrl = await getSignedDownloadUrl(product.fileName);
-      await sendDownloadEmail(email, downloadUrl);
+      const downloadLink = new URL(
+        `/go/${session.id}`,
+        process.env.SITE_URL,
+      ).toString();
+      await sendDownloadEmail(email, downloadLink);
     } else {
       console.error("Checkout session completed with no email", session.id);
     }

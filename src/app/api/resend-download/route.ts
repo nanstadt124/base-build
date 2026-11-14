@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { getSignedDownloadUrl } from "@/lib/storage";
 import { sendDownloadEmail } from "@/lib/email";
-import { product } from "@/lib/product";
 
 export async function POST(request: Request) {
   const { email } = await request.json();
@@ -26,8 +24,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const downloadUrl = await getSignedDownloadUrl(product.fileName);
-  await sendDownloadEmail(normalizedEmail, downloadUrl);
+  const downloadLink = new URL(
+    `/go/${match.id}`,
+    process.env.SITE_URL,
+  ).toString();
+  await sendDownloadEmail(normalizedEmail, downloadLink);
 
   return NextResponse.json({ ok: true });
 }

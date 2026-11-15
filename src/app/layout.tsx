@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL ?? "https://nickanstadt.com"),
   title: "The Base Build",
-  description: "The Program that built me and rebuilt me.",
+  description: "The plan that built me, then rebuilt me — now built for you.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -25,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white font-medium text-black">
+      <body className="flex min-h-full flex-col bg-white font-sans font-medium text-black">
         <NavBar />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />

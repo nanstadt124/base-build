@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Story | The Base Build",
+  description:
+    "From skinny kid to a year of wasted programs, to the plan that finally worked — and the setback that tested it.",
+};
+
 const paragraphs: string[] = [
   "I have been active my entire life, being a competitive swimmer since the age of four. But at 5’10” and 140lbs, I was nowhere near the physique I wanted. I watched bodybuilding videos for hours, convinced you had to live in the gym to look like that.",
   "When a close friend invited me to lift with him at the gym, I said no. Then it hit me: watching videos was never going to build a single pound of muscle. That first pull day left me too sore to straighten my arms, and I was hooked.",

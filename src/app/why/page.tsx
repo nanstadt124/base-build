@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why Me | The Base Build",
+  description:
+    "I'm not a fitness influencer. I'm someone who's been exactly where you are, and found a way out. Twice.",
+};
+
 const sections = [
   {
     heading: "Just a regular guy who had a dream",

@@ -42,9 +42,24 @@ export default function NavBar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="text-sm font-bold text-black md:hidden"
+          className="flex h-6 w-6 flex-col items-center justify-center gap-[5px] md:hidden"
         >
-          {open ? "Close" : "Menu"}
+          <span
+            className="block h-[2px] w-5 bg-black transition-transform"
+            style={{
+              transform: open ? "translateY(7px) rotate(45deg)" : "none",
+            }}
+          />
+          <span
+            className="block h-[2px] w-5 bg-black transition-opacity"
+            style={{ opacity: open ? 0 : 1 }}
+          />
+          <span
+            className="block h-[2px] w-5 bg-black transition-transform"
+            style={{
+              transform: open ? "translateY(-7px) rotate(-45deg)" : "none",
+            }}
+          />
         </button>
       </div>
 

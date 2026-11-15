@@ -1,6 +1,12 @@
 // Drafted to cover the common angles for a small digital product business.
 // Not a substitute for review by a licensed attorney before launch.
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | The Base Build",
+};
+
 const sections = [
   {
     heading: "Information We Collect",

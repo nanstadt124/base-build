@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import BuyButton from "@/components/BuyButton";
+
+export const metadata: Metadata = {
+  title: "The Program | The Base Build",
+  description:
+    "Three rules, one PDF, no gimmicks. $49.99 — the plan that built me, then rebuilt me.",
+};
 
 const insideItems = [
   "The full push, pull, legs training plan",
@@ -135,8 +142,12 @@ export default function TheProgramPage() {
           <span className="text-2xl font-semibold">$49.99</span>
         </div>
 
-        <p className="mt-4 text-xs text-black">
-          Delivered instantly by email after purchase. No refunds — see the{" "}
+        <p className="mt-3 text-xs text-zinc-500">
+          🔒 Secure checkout via Stripe &middot; Instant digital delivery
+        </p>
+
+        <p className="mt-2 text-xs text-black">
+          No refunds — see the{" "}
           <a href="/refund-policy" className="underline underline-offset-2">
             refund policy
           </a>

@@ -1,4 +1,11 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Transformation | The Base Build",
+  description:
+    "The first build, the setback, and the rebuild — in pictures.",
+};
 
 function PhotoBox({
   src,

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refund Policy | The Base Build",
+  description: "All sales are final — here's why, and what to do if something goes wrong.",
+};
+
 export default function RefundPolicyPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-24">

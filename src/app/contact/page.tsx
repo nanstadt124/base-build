@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | The Base Build",
+  description: "Text, call, or email me anytime. I answer personally.",
+};
+
 const CONTACT_EMAIL = "nickanstadt@gmail.com";
 const CONTACT_PHONE_DISPLAY = "(610) 716-4700";
 const CONTACT_PHONE_TEL = "+16107164700";

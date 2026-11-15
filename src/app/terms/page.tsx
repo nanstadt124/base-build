@@ -1,6 +1,12 @@
 // Drafted to cover the common angles for a digital fitness product.
 // Not a substitute for review by a licensed attorney before launch.
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | The Base Build",
+};
+
 const sections = [
   {
     heading: "1. Acceptance of Terms",

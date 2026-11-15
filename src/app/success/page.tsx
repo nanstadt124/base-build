@@ -1,5 +1,10 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { stripe } from "@/lib/stripe";
+
+export const metadata: Metadata = {
+  title: "You're in | The Base Build",
+};
 
 async function SuccessMessage({
   searchParams,

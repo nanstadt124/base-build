@@ -49,9 +49,10 @@ export default function SuccessPage(props: PageProps<"/success">) {
         <SuccessMessage searchParams={props.searchParams} />
       </Suspense>
       <p className="mt-2 text-sm text-black">
-        Didn&apos;t get it?{" "}
+        Don&apos;t see it? Check your spam or junk folder &mdash; it may
+        have landed there. Still nothing after a few minutes?{" "}
         <a href="/resend" className="underline underline-offset-2">
-          Resend the download link
+          Resend your download link
         </a>
         .
       </p>

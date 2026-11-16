@@ -30,7 +30,8 @@ export default function ResendPage() {
       {status === "done" ? (
         <p className="mt-8 text-black">
           If that email matches a purchase, a new download link is on its
-          way.
+          way. Don&apos;t see it? Check your spam or junk folder &mdash; it
+          may have landed there.
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-3">

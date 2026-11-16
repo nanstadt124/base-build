@@ -16,6 +16,8 @@ export async function sendDownloadEmail(to: string, downloadUrl: string) {
       don&rsquo;t have to. Now let&rsquo;s build.</p>
       <p>Stuck or have a question? Text, call, or email me &mdash;
       (610) 716-4700 / nickanstadt@gmail.com. I answer personally.</p>
+      <p>Please do not respond to this email. For any questions, please use
+      the email/phone number referenced above.</p>
     `,
   });
 }

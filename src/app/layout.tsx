@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto_Slab } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <NavBar />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
